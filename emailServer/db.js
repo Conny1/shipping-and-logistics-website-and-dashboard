@@ -2,15 +2,9 @@ import mysql from "mysql";
 
 export const connection = mysql.createConnection({
   host: "localhost",
-  user: "moderat2_root",
-  password: "].NB3T0Au?e7",
+  user: "",
+  password: "",
 });
-
-// export const connection = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "mbuya",
-// });
 
 connection.connect(function (err) {
   if (err) {

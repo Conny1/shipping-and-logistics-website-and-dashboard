@@ -5,6 +5,10 @@ const transporter = nodemailer.createTransport({
   host: "mail.raphaelnetsolutions.com",
   port: 465,
   secure: true,
+  auth: {
+    user: "admin@raphaelnetsolutions.com",
+    pass: "%p7+~b_K6s$A",
+  },
 });
 
 async function sendMail(email, data) {
