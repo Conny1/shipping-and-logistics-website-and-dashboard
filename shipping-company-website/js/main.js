@@ -115,6 +115,9 @@ document
     const mobile = document.getElementById("mobile").value;
     const freightType = document.getElementById("freightType").value;
     const note = document.getElementById("note").value;
+    if (!name || !email || !mobile || !freightType || !note) {
+      return alert("Please provide all details");
+    }
 
     // Create form data object
     const formData = {
@@ -124,16 +127,18 @@ document
       freightType: freightType,
       note: note,
     };
-    console.log(formData);
     try {
       // Send POST request
-      const response = await fetch("http://localhost:5000/api/email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://api.raphaelnetsolutions.com/api/email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       // Handle response
       if (response.ok) {
